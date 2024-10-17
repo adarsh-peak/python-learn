@@ -13,7 +13,7 @@ class UserSchema(BaseModel):
 class UserCreateSchema(BaseModel):
     name: str
     email: str
-    # id: Optional[int]
+    id: Optional[int] = None
 
     class Config:
         orm_mode = True 
