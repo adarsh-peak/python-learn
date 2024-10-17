@@ -30,8 +30,11 @@ def create_user(user: UserCreateSchema, db: Session = Depends(get_db)):
             raise HTTPException(status_code=404, detail="User not found")
         new_user.name = user.name
         new_user.email = user.email
+        new_user.city = user.city
+        new_user.role = user.role 
+        new_user.country = user.country 
     else:
-        new_user = User(name=user.name, email=user.email)
+        new_user = User(name=user.name, email=user.email, role=user.role, city=user.city, country=user.country)
         db.add(new_user)
     
     db.commit()
