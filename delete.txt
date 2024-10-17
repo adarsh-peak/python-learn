@@ -1,0 +1,5 @@
+create a virtual env
+
+activate it - source .venv/bin/source
+
+run project - fastapi dev main.py
